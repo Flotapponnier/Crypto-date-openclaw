@@ -1,34 +1,34 @@
-# 🦞 Mobula Skill for OpenClaw
+# Mobula - Crypto Market Data & Wallet Intelligence
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-blue.svg)](https://openclaw.ai)
 
-Transform your OpenClaw agent into a **24/7 crypto analyst** with real-time data from **88+ blockchains**.
+Real-time crypto market data, wallet portfolio tracking, and token analytics across 88+ blockchains. Oracle-grade pricing trusted by Chainlink, Supra, and API3.
 
 ---
 
-## 🚀 What is This?
+## Overview
 
-An OpenClaw skill that connects your AI agent to [Mobula's](https://mobula.io) crypto data API covering 88+ blockchains, 200M+ tokens.
+OpenClaw skill that connects your AI agent to Mobula's crypto data API covering 88+ blockchains and 200M+ tokens.
 
-**What you get:**
-- 📊 Real-time prices, volume, market cap for any token
-- 💼 Portfolio tracking across all chains
-- 🐋 Whale wallet monitoring
-- 🔍 Autonomous token discovery
-- 📈 Historical data & trend analysis
-- ⚡ Live DEX trade feeds
-- 🔔 Smart alerts with context
+**Key Features:**
+- Real-time prices, volume, market cap for any token
+- Portfolio tracking across all chains
+- Whale wallet monitoring
+- Autonomous token discovery
+- Historical data and trend analysis
+- Live DEX trade feeds
+- Smart alerts with context
 
-**The difference:** Your OpenClaw agent runs 24/7 with a heartbeat system - it **proactively** monitors and alerts you on Telegram/WhatsApp/Discord without you asking.
+**What makes this different:** OpenClaw agents run 24/7 with a heartbeat system. Your agent proactively monitors and alerts you on Telegram/WhatsApp/Discord without prompting.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Install the Skill
 
-**Option A: Via ClawHub (easiest)**
+**Option A: Via ClawHub (recommended)**
 ```
 Tell your agent: "Install the Mobula skill from ClawHub"
 ```
@@ -45,13 +45,13 @@ mkdir mobula && cd mobula
 curl -o SKILL.md https://raw.githubusercontent.com/Flotapponnier/Crypto-date-openclaw/main/SKILL.md
 ```
 
-### 2. Get Your Mobula API Key
+### 2. Get API Key
 
 1. Go to [admin.mobula.fi](https://admin.mobula.fi)
 2. Sign up (free tier: 100 requests/min)
-3. Copy your API key
+3. Copy API key
 
-### 3. Configure Environment Variable
+### 3. Configure Environment
 
 ```bash
 export MOBULA_API_KEY="your_api_key_here"
@@ -63,132 +63,128 @@ echo 'export MOBULA_API_KEY="your_key"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-### 4. Restart Your Agent
+### 4. Restart Agent
 
 ```bash
 openclaw restart
 ```
 
-### 5. Test It
+### 5. Test
 
-Say to your agent:
+Ask your agent:
 > "What's the price of Bitcoin?"
 
 > "Show portfolio for wallet 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
 
-✅ If you get real data → you're set!
-
 ---
 
-## 💡 Use Cases
+## Use Cases
 
-### 1. Portfolio Guardian
-Monitor your wallet 24/7, get alerts on drops/concentration risks.
+### Portfolio Guardian
+Monitor your wallet 24/7, get alerts on drops or concentration risks.
 
-> "Monitor my wallet 0x... and alert me on Telegram if any token drops >15% or my allocation exceeds 40% on one asset. Daily summary at 9am."
+> "Monitor my wallet 0x... and alert me on Telegram if any token drops more than 15% or my allocation exceeds 40% on one asset. Daily summary at 9am."
 
 **Example alert:**
 ```
-⚠️ Portfolio Alert
+Portfolio Alert
 
 Your ETH allocation is now 47% (was 38% yesterday).
 Consider rebalancing to reduce concentration risk.
 
 Current holdings:
 - ETH: $12,340 (47%)
-- BRETT: $8,200 (31%) ↑12% 24h
-- DEGEN: $5,890 (22%) ↓3% 24h
+- BRETT: $8,200 (31%) up 12% 24h
+- DEGEN: $5,890 (22%) down 3% 24h
 ```
 
 ---
 
-### 2. Whale Tracker
+### Whale Tracker
 Follow smart money, get alerted when whales move.
 
-> "Watch wallets 0xabc, 0xdef, 0x123. Alert if any buy/sell >$50K. If multiple whales buy the same token within 6h, priority alert with full analysis."
+> "Watch wallets 0xabc, 0xdef, 0x123. Alert if any buy/sell more than $50K. If multiple whales buy the same token within 6h, priority alert with full analysis."
 
 **Example alert:**
 ```
-🐋 Whale Alert - HIGH PRIORITY
+Whale Alert - HIGH PRIORITY
 
 Wallet 0x742d... bought $150K of BRETT on Base (2h ago)
 
-Token: BRETT | Price: $0.089 (↑23% 24h)
+Token: BRETT | Price: $0.089 (up 23% 24h)
 Mcap: $2.3M | Volume: $1.2M (8x normal)
 
 Cross-signal: 2 other tracked whales also bought BRETT:
 - 0x888... bought $80K (4h ago)
 - 0x111... bought $120K (1h ago)
 
-⚡ Possible coordinated accumulation.
+Possible coordinated accumulation.
 ```
 
 ---
 
-### 3. Token Scout (Autonomous Discovery)
+### Token Scout (Autonomous Discovery)
 Agent finds new tokens matching your criteria every X hours.
 
-> "Find tokens on Base/Arbitrum every 6h: mcap <$5M, liquidity >$100K, volume up 50%+ 24h, verified contract. Send top 3 with analysis."
+> "Find tokens on Base/Arbitrum every 6h: mcap under $5M, liquidity over $100K, volume up 50%+ 24h, verified contract. Send top 3 with analysis."
 
 **Example alert:**
 ```
-🔍 Token Scout - 3 New Matches
+Token Scout - 3 New Matches
 
 1. BOOP on Base
-   - Price: $0.0042 (↑156% 24h, ↑340% 7d)
+   - Price: $0.0042 (up 156% 24h, up 340% 7d)
    - Mcap: $2.1M | Liquidity: $280K
    - Volume: $890K (12x average)
-   - Contract: Verified ✓
+   - Contract: Verified
    - Risk: Medium
-   [Dexscreener] [Contract]
 
 2. ZORP on Arbitrum
-   - Price: $0.0089 (↑78% 24h)
+   - Price: $0.0089 (up 78% 24h)
    - Mcap: $3.4M | Liquidity: $450K
    - Whale buy: $60K (3h ago)
-   [Links...]
 
 3. [...]
 ```
 
 ---
 
-### 4. Smart Price Alerts
+### Smart Price Alerts
 Contextual alerts based on multiple conditions (not just "price > X").
 
-> "Alert if BTC moves >5% in 1h, BUT only if volume is 2x above 24h average. Real moves, not noise."
+> "Alert if BTC moves more than 5% in 1h, BUT only if volume is 2x above 24h average. Real moves, not noise."
 
 > "Alert if ETH breaks $4K after consolidating $3,800-$3,950 for 3+ days. That's a real breakout."
 
 ---
 
-### 5. Market Brief
+### Market Brief
 Automated morning/evening market overviews.
 
-> "Send market overview at 7am & 7pm on Telegram. Include BTC, ETH, SOL, and any top 100 token that moved >10%."
+> "Send market overview at 7am and 7pm on Telegram. Include BTC, ETH, SOL, and any top 100 token that moved more than 10%."
 
 **Example brief:**
 ```
-📊 Crypto Market Brief - Feb 20, 7:00 AM
+Crypto Market Brief - Feb 20, 7:00 AM
 
 Majors:
-- BTC: $67,234 (↑2.1% 24h)
-- ETH: $3,456 (↑4.3% 24h)
-- SOL: $123.45 (↓1.2% 24h)
+- BTC: $67,234 (up 2.1% 24h)
+- ETH: $3,456 (up 4.3% 24h)
+- SOL: $123.45 (down 1.2% 24h)
 
 Big Movers (24h):
-- PEPE: ↑23%
-- ARB: ↑15%
-- AVAX: ↓12%
+- PEPE: up 23%
+- ARB: up 15%
+- AVAX: down 12%
 
 Sentiment: Cautiously bullish. ETH leading, memes pumping.
 ```
 
 ---
 
-## 🎯 Ready-to-Use Templates
+## Templates
 
-In [`examples/`](./examples):
+Ready-to-use heartbeat templates in [`examples/`](./examples):
 
 - **[`heartbeat-portfolio-guardian.md`](./examples/heartbeat-portfolio-guardian.md)** - Monitor your wallet 24/7
 - **[`heartbeat-whale-tracker.md`](./examples/heartbeat-whale-tracker.md)** - Follow smart money
@@ -202,15 +198,15 @@ In [`examples/`](./examples):
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 - **[SKILL.md](./SKILL.md)** - Core skill file (what your agent reads)
 - **[docs/SETUP.md](./docs/SETUP.md)** - Detailed installation guide
-- **[docs/TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)** - Common issues & fixes
+- **[docs/TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)** - Common issues and fixes
 
 ---
 
-## 🔧 Supported Endpoints
+## Supported Endpoints
 
 | Endpoint | Purpose |
 |----------|---------|
@@ -226,37 +222,37 @@ In [`examples/`](./examples):
 
 ---
 
-## 🎓 How It Works
+## How It Works
 
-1. You give instructions in **natural language** to your agent
-2. Agent reads **SKILL.md** to learn Mobula endpoints
-3. On **heartbeat** (~30min intervals), agent checks monitoring tasks
-4. When conditions met → fetches from Mobula API
-5. **Analyzes & alerts** you on Telegram/WhatsApp/Discord/Slack
+1. You give instructions in natural language to your agent
+2. Agent reads SKILL.md to learn Mobula endpoints
+3. On heartbeat (~30min intervals), agent checks monitoring tasks
+4. When conditions met, fetches from Mobula API
+5. Analyzes and alerts you on Telegram/WhatsApp/Discord/Slack
 
-**The magic:** Persistent, proactive monitoring. Your agent works 24/7 without you asking.
+**The advantage:** Persistent, proactive monitoring. Your agent works 24/7 without prompting.
 
 ---
 
-## 💎 Comparison
+## Comparison
 
 | Feature | CoinGecko/CMC | DexScreener | Mobula + OpenClaw |
 |---------|---------------|-------------|-------------------|
-| Price tracking | ✅ | ✅ | ✅ |
-| 24/7 AI monitoring | ❌ | ❌ | ✅ |
-| Contextual alerts | ❌ | ❌ | ✅ |
-| Whale tracking | ❌ | ❌ | ✅ |
-| Cross-chain portfolio | Basic | ❌ | ✅ |
-| Autonomous discovery | ❌ | ❌ | ✅ |
-| Natural language | ❌ | ❌ | ✅ |
-| Custom logic | ❌ | ❌ | ✅ |
+| Price tracking | Yes | Yes | Yes |
+| 24/7 AI monitoring | No | No | Yes |
+| Contextual alerts | No | No | Yes |
+| Whale tracking | No | No | Yes |
+| Cross-chain portfolio | Basic | No | Yes |
+| Autonomous discovery | No | No | Yes |
+| Natural language | No | No | Yes |
+| Custom logic | No | No | Yes |
 
 ---
 
-## 🚦 Rate Limits
+## Rate Limits
 
 - **Free tier:** 100 requests/minute (sufficient for most users)
-- **Pro tier:** Higher limits + priority support at [admin.mobula.fi](https://admin.mobula.fi)
+- **Pro tier:** Higher limits at [admin.mobula.fi](https://admin.mobula.fi)
 
 **Optimization tips:**
 - Use `/market/multi-data` for batch queries (1 request for 500 tokens vs 500 separate)
@@ -265,7 +261,7 @@ In [`examples/`](./examples):
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 **"API key not found" / 401 errors**
 - Check: `echo $MOBULA_API_KEY`
@@ -286,16 +282,16 @@ See full guide: **[docs/TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)**
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-- 🐛 [Report bugs](https://github.com/Flotapponnier/Crypto-date-openclaw/issues)
-- 💡 [Request features](https://github.com/Flotapponnier/Crypto-date-openclaw/issues/new?template=feature_request.md)
-- 🔀 [Submit PRs](https://github.com/Flotapponnier/Crypto-date-openclaw/pulls)
-- 🎯 Share your heartbeat templates
+- [Report bugs](https://github.com/Flotapponnier/Crypto-date-openclaw/issues)
+- [Request features](https://github.com/Flotapponnier/Crypto-date-openclaw/issues/new?template=feature_request.md)
+- [Submit PRs](https://github.com/Flotapponnier/Crypto-date-openclaw/pulls)
+- Share your heartbeat templates
 
 ---
 
-## 📖 Resources
+## Resources
 
 - **Mobula API Docs:** [docs.mobula.io](https://docs.mobula.io)
 - **Get API Key:** [admin.mobula.fi](https://admin.mobula.fi)
@@ -304,25 +300,25 @@ See full guide: **[docs/TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)**
 
 ---
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](./LICENSE)
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - **Skill by:** [Mobula](https://mobula.io)
-- **Built for:** [OpenClaw](https://openclaw.ai) by Peter Steinberger
+- **Built for:** [OpenClaw](https://openclaw.ai)
 - **Coverage:** 88+ blockchains, 200M+ tokens
 
 ---
 
-## ⚡ Get Started
+## Get Started
 
-1. [Install the skill](#-quick-start)
+1. [Install the skill](#quick-start)
 2. Try: "What's the price of Bitcoin?"
 3. Set up monitoring: "Monitor my wallet 0x..."
-4. Explore [templates](./examples) for inspiration
+4. Explore [templates](./examples)
 
-**Build your 24/7 crypto intelligence agent.** 🚀
+Build your 24/7 crypto intelligence agent.
